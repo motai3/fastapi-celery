@@ -1,0 +1,388 @@
+<html>
+ <head>
+  <title>
+   Get Started
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #1a2b3c;
+            position: fixed;
+            padding-top: 20px;
+            transition: width 0.3s;
+        }
+        .sidebar.collapsed {
+            width: 80px;
+        }
+        .sidebar img {
+            display: block;
+            margin: 0 auto;
+            width: 50px;
+        }
+        .sidebar h1 {
+            text-align: center;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .sidebar.collapsed h1 {
+            display: none;
+        }
+        .sidebar .menu {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar .menu li {
+            padding: 15px 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .menu li i {
+            margin-right: 10px;
+        }
+        .sidebar.collapsed .menu li {
+            justify-content: center;
+        }
+        .sidebar.collapsed .menu li i {
+            margin-right: 0;
+        }
+        .sidebar .menu li:hover {
+            background-color: #2a3b4c;
+            cursor: pointer;
+        }
+        .sidebar .help-support {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .sidebar .help-support i {
+            margin-right: 10px;
+        }
+        .sidebar.collapsed .help-support i {
+            margin-right: 0;
+        }
+        .sidebar.collapsed .help-support span {
+            display: none;
+        }
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+            transition: margin-left 0.3s;
+        }
+        .content.collapsed {
+            margin-left: 80px;
+        }
+        .content h1 {
+            font-size: 36px;
+        }
+        .content p {
+            font-size: 18px;
+        }
+        .content .languages {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .content .languages .language {
+            background-color: #2a2a3b;
+            padding: 20px;
+            width: 22%;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .content .languages .language img {
+            width: 50px;
+            height: 50px;
+        }
+        .content .languages .language h2 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .content .view-more {
+            color: #00aaff;
+            margin-top: 10px;
+            display: block;
+        }
+        .content .cards {
+            margin-top: 20px;
+        }
+        .content .cards .card {
+            background-color: #2a2a3b;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content .cards .card h3 {
+            font-size: 24px;
+        }
+        .content .cards .card p {
+            font-size: 16px;
+        }
+        .content .cards .card i {
+            font-size: 24px;
+        }
+        .content .useful-links {
+            margin-top: 20px;
+        }
+        .content .useful-links h2 {
+            font-size: 24px;
+        }
+        .content .useful-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content .useful-links ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .content .useful-links ul li a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        .content .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888888;
+        }
+        .content .footer a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            left: 250px;
+            background-color: #1a2b3c;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: left 0.3s;
+        }
+        .toggle-btn.collapsed {
+            left: 80px;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="sidebar" id="sidebar">
+   <img alt="InfluxDB Logo" height="50" src="https://replicate.delivery/yhqm/DGCsxoYafYzvJC96UquCxWVALPGJCUqab78yqAtYIUy8XxpJA/out-0.png" width="50"/>
+   <h1>
+    influxdb
+   </h1>
+   <ul class="menu">
+    <li>
+     <i class="fas fa-upload">
+     </i>
+     <span>
+      Load Data
+     </span>
+    </li>
+    <li>
+     <i class="fas fa-database">
+     </i>
+     <span>
+      Data Explorer
+     </span>
+    </li>
+    <li>
+     <i class="fas fa-book">
+     </i>
+     <span>
+      Notebooks
+     </span>
+    </li>
+    <li>
+     <i class="fas fa-chart-line">
+     </i>
+     <span>
+      Dashboards
+     </span>
+    </li>
+    <li>
+     <i class="fas fa-tasks">
+     </i>
+     <span>
+      Tasks
+     </span>
+    </li>
+    <li>
+     <i class="fas fa-bell">
+     </i>
+     <span>
+      Alerts
+     </span>
+    </li>
+    <li>
+     <i class="fas fa-cog">
+     </i>
+     <span>
+      Settings
+     </span>
+    </li>
+   </ul>
+   <div class="help-support">
+    <i class="fas fa-question-circle">
+    </i>
+    <span>
+     Help &amp; Support
+    </span>
+   </div>
+  </div>
+  <button class="toggle-btn" id="toggle-btn">
+   <i class="fas fa-bars">
+   </i>
+  </button>
+  <div class="content" id="content">
+   <h1>
+    Get Started
+   </h1>
+   <p>
+    Write and query data using the programming language of your choice
+   </p>
+   <div class="languages">
+    <div class="language">
+     <img alt="Python Logo" height="50" src="https://replicate.delivery/yhqm/OeIKJIhOY1U1NKUoBRtWT4RKjKf3SofUrVsG1GbhhBWrfKONB/out-0.png" width="50"/>
+     <h2>
+      Python
+     </h2>
+    </div>
+    <div class="language">
+     <img alt="Node.js Logo" height="50" src="https://replicate.delivery/yhqm/exwdmBT2NNSTekJOVcneHJWYlOxuiJoi24kNOtpy0YvufKONB/out-0.png" width="50"/>
+     <h2>
+      Node.js
+     </h2>
+    </div>
+    <div class="language">
+     <img alt="Go Logo" height="50" src="https://replicate.delivery/yhqm/BLALy98UDpJsO1wyCTT84fsYM570Wz1aoilv8BCFcfx2viTTA/out-0.png" width="50"/>
+     <h2>
+      Go
+     </h2>
+    </div>
+    <div class="language">
+     <img alt="Arduino Logo" height="50" src="https://replicate.delivery/yhqm/69LqcQqs1VK0GdcHbfrbYrpBQaFhbflmdZ7p46mLTGu4viTTA/out-0.png" width="50"/>
+     <h2>
+      Arduino
+     </h2>
+    </div>
+   </div>
+   <a class="view-more" href="#">
+    View more
+   </a>
+   <div class="cards">
+    <div class="card">
+     <div>
+      <h3>
+       InfluxDB CLI
+      </h3>
+      <p>
+       Write and query data using the InfluxDB Command Line Interface. Supports CSV and Line Protocol.
+      </p>
+     </div>
+     <i class="fas fa-arrow-right">
+     </i>
+    </div>
+    <div class="card">
+     <div>
+      <h3>
+       Server Agent (Telegraf)
+      </h3>
+      <p>
+       Easily collect and write data using custom stand-alone agent plugins
+      </p>
+     </div>
+     <i class="fas fa-arrow-right">
+     </i>
+    </div>
+   </div>
+   <div class="useful-links">
+    <h2>
+     USEFUL LINKS
+    </h2>
+    <ul>
+     <li>
+      <a href="#">
+       InfluxDB University
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Get Started with Flux
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Explore Metrics
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Build a Dashboard
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Write a Task
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Report a bug
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Community Forum
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Feature Requests
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="footer">
+    <p>
+     InfluxDB v2.7.6
+    </p>
+    <p>
+     Server:
+     <a href="#">
+      3c58c06
+     </a>
+    </p>
+    <p>
+     Frontend:
+     <a href="#">
+      9d25a2f
+     </a>
+    </p>
+   </div>
+  </div>
+  <script>
+   document.getElementById('toggle-btn').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            var content = document.getElementById('content');
+            var toggleBtn = document.getElementById('toggle-btn');
+            sidebar.classList.toggle('collapsed');
+            content.classList.toggle('collapsed');
+            toggleBtn.classList.toggle('collapsed');
+        });
+  </script>
+ </body>
+</html>
