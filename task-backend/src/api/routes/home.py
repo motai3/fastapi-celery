@@ -8,7 +8,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 router = APIRouter()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="./src/static")
 
 
 @router.get("/")
@@ -17,4 +17,4 @@ def read_items(request: Request) -> Any:
     暂时返回主页面
     """
 
-    return templates.TemplateResponse("home.html", context={"request": request})
+    return templates.TemplateResponse("./html/index.html", context={"request": request})
