@@ -1,20 +1,8 @@
-import os
 import time
-
+from src.worker import celery
 from src.core.binance.base_client import BinanceClient
-from celery import Celery
 
 cli = BinanceClient.get_dummy_client()
-
-celery = Celery(__name__)
-celery.conf.broker_url = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379")
-celery.conf.result_backend = os.environ.get("CELERY_RESULT_BACKEND", "redis://localhost:6379")
-
-
-@celery.task(name="create_task")
-def create_task(task_type):
-    time.sleep(int(task_type) * 10)
-    return True
 
 @celery.task(name="print_symbol")
 def print_symbol(task_type):
